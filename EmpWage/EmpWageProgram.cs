@@ -10,11 +10,11 @@ namespace EmpWage
     {
         public static void EmployeeMonthlyWage()
         {
-            const int WAGE_PER_HOUR = 20, WORKING_DAYS_PER_MONT = 20;
-            int empWorkHr = 0, TotalWagePerMonth=0;
+            const int WAGE_PER_HOUR = 20, WORKING_DAYS_PER_MONT = 20, MAX_WORK_HOUR = 100;
+            int empWorkHr = 0, totalWagePerMonth = 0, totalempWorkHr = 0, day=1;
             int DailyEmployeeWage = 0;
             Random random = new Random();
-            for (int day = 1; day <= WORKING_DAYS_PER_MONT; day++)
+            while (totalempWorkHr <= MAX_WORK_HOUR && day <= WORKING_DAYS_PER_MONT)
             {
                 int empCheck = random.Next(3);
                 switch (empCheck)
@@ -34,10 +34,11 @@ namespace EmpWage
                 }
                 DailyEmployeeWage = empWorkHr * WAGE_PER_HOUR;
                 Console.WriteLine($"Daily Employee Wage for Day {day} is: " + DailyEmployeeWage);
-                TotalWagePerMonth = DailyEmployeeWage + TotalWagePerMonth;
-                
+                totalWagePerMonth = DailyEmployeeWage + totalWagePerMonth;
+                totalempWorkHr = empWorkHr + totalempWorkHr;
+                day++;
             }
-            Console.WriteLine($"Monthly Employee Wage is: " + TotalWagePerMonth);
+            Console.WriteLine($"Monthly Employee Wage is: " + totalWagePerMonth +" ,Total Employee Working Hours are "+ totalempWorkHr);
         }
     }
 }
