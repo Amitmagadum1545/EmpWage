@@ -11,7 +11,7 @@ namespace EmpWage
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Employee Wage Program");
-            EmpWageProgram.CheckEmpPresentOrAbsent();
+            EmpWageProgram.EmployeeDailyWage();
             Console.ReadLine();
         }
     }
