@@ -9,13 +9,14 @@ namespace EmpWage
     internal class EmpWageProgram
     {
         public const int WAGE_PER_HOUR = 20, WORKING_DAYS_PER_MONT = 20, MAX_WORK_HOUR = 100;
-        public static int empWorkHr = 0, totalWagePerMonth = 0, totalempWorkHr = 0, day = 1;
-        public static int DailyEmployeeWage = 0;
+       
 
-        public static void EmployeeMonthlyWage()
+        public static void EmployeeMonthlyWage(string company , int emp_Wage_Per_Hr, int working_Days_Per_Month, int max_Hrs_Per_Month)
         {
-           
-            Random random = new Random();
+             int empWorkHr = 0, totalWagePerMonth = 0, totalempWorkHr = 0, day = 1;
+             int DailyEmployeeWage = 0;
+
+        Random random = new Random();
             while (totalempWorkHr <= MAX_WORK_HOUR && day <= WORKING_DAYS_PER_MONT)
             {
                 int empCheck = random.Next(3);
