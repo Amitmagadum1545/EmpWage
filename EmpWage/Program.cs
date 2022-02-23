@@ -11,9 +11,12 @@ namespace EmpWage
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Employee Wage Program");
-            EmpWageProgram.EmployeeMonthlyWage("Google", 20, 2, 10);
-            EmpWageProgram.EmployeeMonthlyWage("Tata Motors", 10, 4, 20);
-            EmpWageProgram.EmployeeMonthlyWage("Maruti Suzuki", 15, 3, 15);
+            EmpWageProgram google = new EmpWageProgram("Google", 20, 2, 10);
+            EmpWageProgram tataMotors = new EmpWageProgram("Tata Motors", 10, 4, 20);
+            EmpWageProgram marutiSuzuki = new EmpWageProgram("Maruti Suzuki", 15, 3, 15);
+            google.computeEmpWage();
+            tataMotors.computeEmpWage();
+            marutiSuzuki.computeEmpWage();
             Console.ReadLine();
         }
     }
