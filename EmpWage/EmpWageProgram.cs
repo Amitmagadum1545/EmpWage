@@ -8,11 +8,13 @@ namespace EmpWage
 {
     internal class EmpWageProgram
     {
+        public const int WAGE_PER_HOUR = 20, WORKING_DAYS_PER_MONT = 20, MAX_WORK_HOUR = 100;
+        public static int empWorkHr = 0, totalWagePerMonth = 0, totalempWorkHr = 0, day = 1;
+        public static int DailyEmployeeWage = 0;
+
         public static void EmployeeMonthlyWage()
         {
-            const int WAGE_PER_HOUR = 20, WORKING_DAYS_PER_MONT = 20, MAX_WORK_HOUR = 100;
-            int empWorkHr = 0, totalWagePerMonth = 0, totalempWorkHr = 0, day=1;
-            int DailyEmployeeWage = 0;
+           
             Random random = new Random();
             while (totalempWorkHr <= MAX_WORK_HOUR && day <= WORKING_DAYS_PER_MONT)
             {
@@ -38,7 +40,7 @@ namespace EmpWage
                 totalempWorkHr = empWorkHr + totalempWorkHr;
                 day++;
             }
-            Console.WriteLine($"Monthly Employee Wage is: " + totalWagePerMonth +" ,Total Employee Working Hours are "+ totalempWorkHr);
+            Console.WriteLine("Monthly Employee Wage is: " + totalWagePerMonth +" ,Total Employee Working Hours are "+ totalempWorkHr);
         }
     }
 }
